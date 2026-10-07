@@ -54,7 +54,17 @@ if (!fs.existsSync(prerenderManifestPath)) {
   // A dynamic route entry with `fallback: null` and no prerendered paths is the
   // on-demand SSR case we are eliminating.
   for (const [route, cfg] of Object.entries(pm.dynamicRoutes || {})) {
-    const hasPrerendered = routes.some((r) => r.startsWith(route.replace(/\/\[[^\]]+\]/g, '/')));
+    const routePattern = new RegExp(
+      `^${route
+        .split('/')
+        .map((segment) =>
+          /^\[[^\]]+\]$/.test(segment)
+            ? '[^/]+'
+            : segment.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        )
+        .join('/')}$`
+    );
+    const hasPrerendered = routes.some((r) => routePattern.test(r));
     if (!hasPrerendered) {
       fail(`dynamic route with no prerendered paths: ${route} (fallback=${cfg.fallback})`);
     }
