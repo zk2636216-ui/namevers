@@ -10,7 +10,6 @@ export const metadata = {
   },
 };
 
-
 const sections = [
   {
     title: '1. What we collect',

@@ -3,7 +3,6 @@ import { getManifest } from '../../lib/data/names-data.js';
 import NameCard from '../../components/NameCard.jsx';
 import AdSlot from '../../components/AdSlot.jsx';
 
-
 export const metadata = {
   title: 'Unique & Rare Baby Names — 100 Distinctive Picks | NameVerse',
   description:

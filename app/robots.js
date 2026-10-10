@@ -10,7 +10,6 @@ export default function robots() {
     ],
     sitemap: [
       'https://nameverse.site/sitemap.xml',
-      'https://nameverse.site/sitemap-index.xml',
     ],
   };
 }

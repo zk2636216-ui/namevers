@@ -12,7 +12,6 @@ import { buildBreadcrumb, buildArticle } from '../../lib/data/us-schema.js';
 import JsonLd from '../../components/JsonLd.jsx';
 import AdSlot from '../../components/AdSlot.jsx';
 
-
 const SITE_URL = 'https://nameverse.site';
 const PAGE_URL = `${SITE_URL}/editorial-policy`;
 

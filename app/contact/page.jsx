@@ -11,7 +11,6 @@ export const metadata = {
   },
 };
 
-
 const contactJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',

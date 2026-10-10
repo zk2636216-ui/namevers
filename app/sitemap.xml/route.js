@@ -1,6 +1,5 @@
 import { getManifest } from '../../lib/data/names-data.js';
 
-
 export async function GET() {
   const siteUrl = 'https://nameverse.site';
   const manifest = getManifest();

@@ -13,7 +13,6 @@ import { isIndexableRecord } from '@/lib/data/indexability.js';
 import AdSlot from '@/components/AdSlot.jsx';
 import SocialShare from '@/components/SocialShare.jsx';
 
-
 // ─────────────────────────────────────────────────────────────────────────────
 // FIX — Fluid Active CPU
 //

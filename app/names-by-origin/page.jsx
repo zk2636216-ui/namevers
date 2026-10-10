@@ -3,7 +3,6 @@ import { getManifest } from '../../lib/data/names-data.js';
 import { ORIGIN_SLUGS, ORIGIN_LABELS, originSlugFor } from '../../lib/data/name-utils.js';
 import AdSlot from '../../components/AdSlot.jsx';
 
-
 export const metadata = {
   title: 'Baby Names by Origin — Arabic, Biblical, Sanskrit & More | NameVerse',
   description:

@@ -46,22 +46,22 @@ The real goal is not just having a valid sitemap. It is:
 - indexable high-value pages,
 - predictable cache refresh windows for sitemaps and robots files.
 
-When sitemap routes are always dynamic, it adds unnecessary instability to the crawl cycle. This is not catastrophic by itself, but it is a real indexing hygiene issue.
+Dynamic sitemap generation and duplicate sitemap discovery can add unnecessary
+origin and crawler work. A stable, canonical sitemap is preferable.
 
 ---
 
 ## Fixes applied
 
-### A. Sitemap and robots caching fixed to 30-day revalidation
-The following changes were made:
+### A. Sitemap and robots are generated statically
 
-- Added `export const revalidate = 2592000;` to the sitemap index route.
-- Added `export const revalidate = 2592000;` to the per-sitemap route.
-- Added `export const revalidate = 2592000;` to `app/robots.js`.
-- Updated sitemap XML responses to include a fresh `lastmod` value.
-- Updated cache headers to `Cache-Control: public, max-age=2592000, s-maxage=2592000`.
-
-This gives a consistent 30-day cache policy for crawl-optimized files.
+- Sitemap and robots output is generated at build time and refreshed with each
+  deployment; it does not use ISR revalidation.
+- `robots.txt` advertises only the canonical `/sitemap.xml` index. The
+  `/sitemap-index.xml` alias remains available for existing links but is not
+  advertised as a second copy to crawlers.
+- Sitemap responses use a 30-day browser cache policy. Their `lastmod` values
+  reflect the build that generated them.
 
 ### B. Vercel delivery caching aligned with content freshness
 
@@ -69,13 +69,10 @@ This gives a consistent 30-day cache policy for crawl-optimized files.
   days at Vercel's shared edge, with stale-while-revalidate enabled. They are
   not marked `immutable`, because the filenames can be reused when the dataset
   is updated in a later deployment.
-- Sitemap routes use the same 30-day browser and shared-edge lifetime as their
-  Next.js revalidation interval. This avoids the previous one-day Vercel
-  override conflicting with the route-level policy.
+- Sitemap routes use a 30-day browser cache lifetime.
 - Hashed `/_next/static/` assets retain their one-year immutable policy.
-- HTML routes continue to rely on Next.js static generation and
-  `revalidate = 2592000`; no blanket `Cache-Control` header is applied to them,
-  so their ISR behavior remains under Next.js control.
+- HTML routes are generated as static output at deployment time, without ISR
+  revalidation. No blanket `Cache-Control` override is applied to them.
 
 ### C. Improved metadata signal quality
 The global metadata in `app/layout.jsx` was strengthened with a keyword list and more complete site-wide metadata consistency.
@@ -97,18 +94,16 @@ This file is meant to serve as a complete operating record for the SEO cleanup e
 
 ## Important technical details
 
-### Revalidation behavior
-For Next.js App Router pages and routes, `revalidate = 2592000` means the route is re-generated every 30 days.
+### Content freshness
 
-This is the correct pattern for content that changes infrequently but should not be frozen forever.
+Name records and editorial pages are built from repository data. Static output
+is refreshed when a deployment is built, so periodic ISR revalidation is not
+needed for this content.
 
 ### Why this matters for Google
-Google likes stable crawl targets. A 30-day revalidation window is a healthy compromise between:
-
-- freshness,
-- indexed coverage,
-- efficient crawl budget use,
-- stable service responses.
+Google needs stable crawl targets. A single sitemap index and deployment-time
+static output keep crawl discovery consistent while repository-managed content
+is updated through deployments.
 
 ---
 
@@ -124,18 +119,14 @@ Google likes stable crawl targets. A 30-day revalidation window is a healthy com
 
 ## Verification steps performed
 
-1. Build verification:
-   - `npm run build`
-   - Result: successful build with static and dynamic route generation completed.
-
-2. Runtime verification:
-   - Started the production server.
-   - Requested the app with HTTP headers.
-   - Confirmed `Cache-Control` and `x-nextjs-cache` behavior on key routes.
-
-3. Cache validation:
-   - Confirmed 30-day cache headers on sitemap and robots-like routes.
-   - Confirmed the app is using ISR-style cache behavior with a 30-day revalidation window.
+- `npm run build` passed, including the static-output safety gate.
+- The generated prerender manifest contains 13,592 routes and zero routes with
+  ISR revalidation.
+- The build output confirms all 12,438 indexable name records have prerendered
+  HTML.
+- Live response headers were inspected for the homepage, a name-detail page,
+  sitemap, and search-index JSON. The deployed version observed during that
+  check was older than the static-output changes in this repository.
 
 ---
 
@@ -150,12 +141,8 @@ Google likes stable crawl targets. A 30-day revalidation window is a healthy com
 ---
 
 ## Final status
-The project is now aligned with a proper SEO and cache hygiene model:
-
-- stable 30-day revalidation,
-- better metadata coverage,
-- improved crawl stability,
-- clear remediation record,
-- build passes successfully.
+The project serves repository-generated pages as static output, avoids duplicate
+sitemap discovery, retains explicit caching for JSON indexes and sitemaps, and
+passes the production build and static-output checks.
 
 This is the state required for healthier indexing and better Google crawl behavior.

@@ -11,7 +11,6 @@ export const metadata = {
   },
 };
 
-
 const aboutJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',

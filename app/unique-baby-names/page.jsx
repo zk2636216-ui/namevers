@@ -11,7 +11,6 @@ import { EDITORIAL_FAQ } from '../../lib/data/editorial.js';
 import UsPageShell from '../../components/UsPageShell.jsx';
 import NameCard from '../../components/NameCard.jsx';
 
-
 const SITE_URL = 'https://nameverse.site';
 const cluster = getCluster('unique-baby-names');
 const PAGE_URL = `${SITE_URL}/${cluster.slug}`;

@@ -10,7 +10,6 @@ export const metadata = {
   },
 };
 
-
 export default function PopularByStatePage() {
   return (
     <div className="container-page py-10 sm:py-14">

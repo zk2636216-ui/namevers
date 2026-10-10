@@ -7,7 +7,6 @@ import UsPageShell from '../../components/UsPageShell.jsx';
 import NameChip from '../../components/NameChip.jsx';
 import NameCard from '../../components/NameCard.jsx';
 
-
 const SITE_URL = 'https://nameverse.site';
 const cluster = getCluster('gender-neutral-names');
 const PAGE_URL = `${SITE_URL}/${cluster.slug}`;

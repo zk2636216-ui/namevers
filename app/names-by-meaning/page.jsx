@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { getManifest } from '../../lib/data/names-data.js';
 import AdSlot from '../../components/AdSlot.jsx';
 
-
 export const metadata = {
   title: 'Baby Names by Meaning — Light, Love, Strength, Peace & More | NameVerse',
   description:

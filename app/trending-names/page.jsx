@@ -4,7 +4,6 @@ import { religionLabel } from '../../lib/data/name-utils.js';
 import NameCard from '../../components/NameCard.jsx';
 import AdSlot from '../../components/AdSlot.jsx';
 
-
 export const metadata = {
   title: 'Trending Baby Names of 2026 — Most Searched Right Now | NameVerse',
   description:

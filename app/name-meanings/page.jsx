@@ -3,7 +3,6 @@ import { getManifest } from '../../lib/data/names-data.js';
 import NameCard from '../../components/NameCard.jsx';
 import AdSlot from '../../components/AdSlot.jsx';
 
-
 export const metadata = {
   title: 'Baby Name Meanings — 100 Beautiful Names & What They Mean | NameVerse',
   description:
