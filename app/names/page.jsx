@@ -4,7 +4,6 @@ import { isBoy, isGirl } from '../../lib/data/name-utils.js';
 import NameCard from '../../components/NameCard.jsx';
 import PageJsonLd from '../../components/PageJsonLd.jsx';
 import AdSlot from '../../components/AdSlot.jsx';
-export const revalidate = 2592000; // 30 days
 
 export const metadata = {
   title: 'All Baby Names by Religion — 42,000+ Names & Meanings',

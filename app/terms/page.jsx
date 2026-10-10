@@ -10,7 +10,6 @@ export const metadata = {
   },
 };
 
-export const revalidate = 2592000; // 30 days
 const sections = [
   {
     title: '1. Acceptance of terms',

@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import { getBlogPosts } from '../../../lib/data/names-data.js';
 import AdSlot from '../../../components/AdSlot.jsx';
 
-export const revalidate = 2592000; // 30 days
 export const dynamicParams = false;
 
 // Fix 2 — prerender every blog post plus the three static stubs.

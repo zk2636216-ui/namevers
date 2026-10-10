@@ -5,7 +5,6 @@ import HomepageSearch from '../components/HomepageSearch.jsx';
 import PageJsonLd from '../components/PageJsonLd.jsx';
 import AdSlot from '../components/AdSlot.jsx';
 
-export const revalidate = 2592000; // 30 days
 
 export const metadata = {
   title: 'Baby Names with Meanings, Origins & Cultural Context | NameVerse',

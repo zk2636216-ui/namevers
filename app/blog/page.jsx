@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { getBlogPosts } from '../../lib/data/names-data.js';
 import AdSlot from '../../components/AdSlot.jsx';
-export const revalidate = 2592000; // 30 days
 
 export const metadata = {
   title: 'Baby Name Guides & Trends 2026 | NameVerse Blog',

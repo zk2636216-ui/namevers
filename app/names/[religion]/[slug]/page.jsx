@@ -13,7 +13,6 @@ import { isIndexableRecord } from '@/lib/data/indexability.js';
 import AdSlot from '@/components/AdSlot.jsx';
 import SocialShare from '@/components/SocialShare.jsx';
 
-export const revalidate = 2592000; // 30 days
 
 // ─────────────────────────────────────────────────────────────────────────────
 // FIX — Fluid Active CPU

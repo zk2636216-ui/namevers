@@ -5,7 +5,6 @@ import { normalizeGender, genderLabel, religionLabel } from '@/lib/data/name-uti
 import NameCard from '@/components/NameCard.jsx';
 import AdSlot from '@/components/AdSlot.jsx';
 
-export const revalidate = 2592000; // 30 days
 export const dynamicParams = false;
 
 const VALID_HUBS = {

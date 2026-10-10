@@ -5,7 +5,6 @@ import { CATEGORY_SLUGS, CATEGORY_LABELS, categorySlugFor, religionLabel } from 
 import NameCard from '../../../components/NameCard.jsx';
 import AdSlot from '../../../components/AdSlot.jsx';
 
-export const revalidate = 2592000; // 30 days
 export const dynamicParams = false;
 
 // Fix 2 — prerender all curated category hubs at build time.

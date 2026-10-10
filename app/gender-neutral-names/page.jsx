@@ -7,7 +7,6 @@ import UsPageShell from '../../components/UsPageShell.jsx';
 import NameChip from '../../components/NameChip.jsx';
 import NameCard from '../../components/NameCard.jsx';
 
-export const revalidate = 2592000; // 30 days
 
 const SITE_URL = 'https://nameverse.site';
 const cluster = getCluster('gender-neutral-names');

@@ -2,7 +2,6 @@ import { getManifest, getBlogPosts } from '../../../lib/data/names-data.js';
 import { ORIGIN_SLUGS, CATEGORY_SLUGS } from '../../../lib/data/name-utils.js';
 import { ALL_RELIGIONS, ALL_LETTERS, lettersFor } from '../../../lib/data/letter-browser.js';
 
-export const revalidate = 2592000; // 30 days
 
 // Prerender every sitemap chunk at build time so this route is static (○),
 // not server-rendered on demand (ƒ). Without this, each crawler hit on a

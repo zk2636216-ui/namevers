@@ -1,4 +1,3 @@
-export const revalidate = 2592000; // 30 days
 
 export default function robots() {
   return {

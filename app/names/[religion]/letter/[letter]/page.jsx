@@ -7,7 +7,6 @@ import AlphabetNav from '../../../../../components/AlphabetNav.jsx';
 import NameCard from '../../../../../components/NameCard.jsx';
 import AdSlot from '../../../../../components/AdSlot.jsx';
 
-export const revalidate = 2592000; // 30 days
 // FIX — Fluid Active CPU: every letter hub that has names is prerendered by
 // generateStaticParams below, so no unknown letter can fall through to an
 // on-demand render.

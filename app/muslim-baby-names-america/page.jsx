@@ -5,7 +5,6 @@ import { EDITORIAL_FAQ } from '../../lib/data/editorial.js';
 import UsPageShell from '../../components/UsPageShell.jsx';
 import NameCard from '../../components/NameCard.jsx';
 
-export const revalidate = 2592000; // 30 days
 
 const SITE_URL = 'https://nameverse.site';
 const cluster = getCluster('muslim-baby-names-america');

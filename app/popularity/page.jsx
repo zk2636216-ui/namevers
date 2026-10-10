@@ -3,7 +3,6 @@ import PopularityClient from '../../components/PopularityClient.jsx';
 import NameCard from '../../components/NameCard.jsx';
 import AdSlot from '../../components/AdSlot.jsx';
 
-export const revalidate = 2592000; // 30 days
 
 export const metadata = {
   title: 'Popularity Comparison — Compare Baby Names Side by Side | NameVerse',

@@ -1,6 +1,5 @@
 import { getManifest } from '../../lib/data/names-data.js';
 
-export const revalidate = 2592000; // 30 days
 
 export async function GET() {
   const siteUrl = 'https://nameverse.site';

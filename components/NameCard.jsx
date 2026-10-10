@@ -45,6 +45,7 @@ export default function NameCard({ item, showReligion = false, headingTag = 'h3'
   return (
     <Link
       href={`/names/${religion}/${item.slug}`}
+      prefetch={false}
       className="card group relative flex flex-col overflow-hidden p-5 hover:-translate-y-1 hover:border-nv-accent/40 hover:shadow-card-hover"
     >
       <span className={`absolute left-0 top-0 h-1 w-full ${style.bar} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />

@@ -15,7 +15,6 @@ import AlphabetNav from '../../../components/AlphabetNav.jsx';
 import NameCard from '../../../components/NameCard.jsx';
 import AdSlot from '../../../components/AdSlot.jsx';
 
-export const revalidate = 2592000; // 30 days
 // FIX — Fluid Active CPU: every tradition hub is prerendered by
 // generateStaticParams below, so no unknown religion can fall through to an
 // on-demand render.

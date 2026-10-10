@@ -3,7 +3,6 @@ import { getManifest } from '../../lib/data/names-data.js';
 import { CATEGORY_SLUGS, CATEGORY_LABELS, categorySlugFor } from '../../lib/data/name-utils.js';
 import AdSlot from '../../components/AdSlot.jsx';
 
-export const revalidate = 2592000; // 30 days
 
 export const metadata = {
   title: 'Baby Names by Category — Islamic, Hindu, Biblical, Saint, Virtue, Italian',

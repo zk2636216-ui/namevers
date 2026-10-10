@@ -10,7 +10,6 @@ export const metadata = {
   },
 };
 
-export const revalidate = 2592000; // 30 days
 export default function MyNamesPage() {
   return (
     <div className="container-page py-10 sm:py-14">

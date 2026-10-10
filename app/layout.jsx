@@ -108,6 +108,10 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content="#1E2A4A" />
+        <meta
+          name="google-site-verification"
+          content="bY09F9IpVk_dzOagZu5xAzZwH9U-Io3IeuBeaBkfG0g"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{const t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
